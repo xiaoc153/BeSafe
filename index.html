@@ -1,2 +1,630 @@
-hello,
-Here is BeSafe.
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeSafe 必锁 | AES-256 文件加密 · 你的隐私，只有你能解锁</title>
+<meta name="description" content="BeSafe 必锁 — 基于 AES-256 的本地文件加密存储工具。图片、视频、音频、文档、压缩包一键加密，内存解密即开即用，恢复码永不丢失。" />
+<meta name="keywords" content="文件加密,AES-256,隐私保护,本地加密,文件锁,BeSafe,必锁" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231890ff'/><path d='M16 7a5 5 0 00-5 5v3h-1v10h12V15h-1v-3a5 5 0 00-5-5zm-3 8v-3a3 3 0 016 0v3z' fill='white'/></svg>" />
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="6" fill="#1890ff"/>
+        <path d="M16 7a5 5 0 00-5 5v3h-1v10h12V15h-1v-3a5 5 0 00-5-5zm-3 8v-3a3 3 0 016 0v3z" fill="white"/>
+      </svg>
+      <span>BeSafe <em>必锁</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#features">核心功能</a>
+      <a href="#how">使用流程</a>
+      <a href="#highlights">亮点特性</a>
+      <a href="#security">安全架构</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#download" class="btn btn-primary btn-sm">立即下载</a>
+      <button class="nav-toggle" id="navToggle" aria-label="menu"></button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <div class="badge">🔒 本地加密 · 零上传 · 零泄漏</div>
+      <h1>
+        有些文件，<br />
+        只该<span class="grad-text">你自己</span>看见。
+      </h1>
+      <p class="hero-slogan">安全加密，随心查看 · AES-256 · 大小无限制 · 速度无限制</p>
+      <p class="hero-sub">
+        BeSafe 必锁 — 采用 <strong>AES-256</strong> 高级加密标准，
+        为图片、视频、音频、文档、压缩包提供本地加密存储。
+        加密文件保留原始格式，查看时内存解密，关闭即毁。
+      </p>
+
+      <div class="hero-meme">
+        <div class="meme-card">
+          <div class="meme-front">
+            <span class="meme-icon">📸</span>
+            <span class="meme-title">未加密的秘密文件</span>
+          </div>
+          <div class="meme-arrow">➜</div>
+          <div class="meme-back">
+            <span class="meme-icon">🔒</span>
+            <span class="meme-title">BeSafe 加密后</span>
+            <span class="meme-sub">AES-256 · 内存解密 · 不留痕</span>
+          </div>
+        </div>
+        <p class="meme-caption">
+          &ldquo;如果当年那位顶流用了 BeSafe，今天一定依然是顶流。&rdquo;<br />（请原谅我 冠希bro (●'◡'●)）
+        </p>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary btn-lg">⬇ 免费下载</a>
+        <a href="#features" class="btn btn-ghost btn-lg">查看功能 →</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>AES-256</strong><span>军规级加密</span></div>
+        <div><strong>0</strong><span>云端上传</span></div>
+        <div><strong>∞</strong><span>文件大小限制</span></div>
+        <div><strong>∞</strong><span>加密速度限制</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="app-window">
+        <div class="app-titlebar">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="app-title">BeSafe 必锁 · v2.1.8</span>
+        </div>
+        <div class="app-body">
+          <div class="app-nav">
+            <div class="app-nav-item active">🔐 我的空间</div>
+            <div class="app-nav-item">📊 数据看板</div>
+          </div>
+          <div class="app-toolbar">
+            <div class="app-search">🔍 搜索加密文件…</div>
+            <div class="app-filter">全部</div>
+            <div class="app-filter active">图片</div>
+            <div class="app-filter">视频</div>
+            <div class="app-filter">音频</div>
+            <div class="app-filter">文档</div>
+          </div>
+          <div class="app-grid">
+            <div class="fake-card">
+              <div class="fake-card-tag">图片</div>
+              <div class="fake-card-cover" style="background:linear-gradient(135deg,#667eea,#764ba2)"></div>
+              <div class="fake-card-title">旅行记忆 (3)</div>
+              <div class="fake-card-meta">📅 2026-08-09 · 12.4MB</div>
+            </div>
+            <div class="fake-card">
+              <div class="fake-card-tag">视频</div>
+              <div class="fake-card-cover" style="background:linear-gradient(135deg,#f093fb,#f5576c)"></div>
+              <div class="fake-card-title">年度短片</div>
+              <div class="fake-card-meta">📅 2026-08-08 · 264MB</div>
+            </div>
+            <div class="fake-card">
+              <div class="fake-card-tag">音频</div>
+              <div class="fake-card-cover" style="background:linear-gradient(135deg,#4facfe,#00f2fe)"></div>
+              <div class="fake-card-title">私人录音</div>
+              <div class="fake-card-meta">📅 2026-08-07 · 38MB</div>
+            </div>
+            <div class="fake-card">
+              <div class="fake-card-tag">文档</div>
+              <div class="fake-card-cover" style="background:linear-gradient(135deg,#fa709a,#fee140)"></div>
+              <div class="fake-card-title">重要合同.pdf</div>
+              <div class="fake-card-meta">📅 2026-08-05 · 2.1MB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FEATURES ====== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">核心功能</div>
+      <h2>一站式加密，<span class="accent-underline">6 类文件</span>全支持</h2>
+      <p class="section-desc">不止是文件锁，更是你私密空间的守护者</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🖼️</div>
+        <h3>图片加密</h3>
+        <p>JPG / PNG / GIF / WebP / TIFF 等格式加密，内置大图查看器，支持幻灯片播放。</p>
+        <div class="feature-tags">
+          <span>JPG</span><span>PNG</span><span>GIF</span><span>WebP</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>视频加密</h3>
+        <p>MP4 / MKV / AVI / MOV / FLV 等视频文件加密，内置播放器支持进度拖动。</p>
+        <div class="feature-tags">
+          <span>MP4</span><span>MKV</span><span>AVI</span><span>MOV</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎵</div>
+        <h3>音频加密</h3>
+        <p>MP3 / WAV / FLAC / AAC / OGG 音频文件加密，附带随机播放、歌词显示。</p>
+        <div class="feature-tags">
+          <span>MP3</span><span>WAV</span><span>FLAC</span><span>AAC</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>文档加密</h3>
+        <p>PDF / Word / Excel / PPT / TXT / CSV 文档加密保护，防止未授权访问。</p>
+        <div class="feature-tags">
+          <span>PDF</span><span>DOCX</span><span>XLSX</span><span>PPTX</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📦</div>
+        <h3>压缩包加密</h3>
+        <p>ZIP / RAR / 7z / TAR / GZ 压缩包加密保护，保留原始结构，安全无忧。</p>
+        <div class="feature-tags">
+          <span>ZIP</span><span>RAR</span><span>7z</span><span>TAR</span>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📁</div>
+        <h3>任意文件加密</h3>
+        <p>其他任意类型文件均可加密保护，分组管理，批量操作，灵活应用。</p>
+        <div class="feature-tags">
+          <span>EXE</span><span>PSD</span><span>DB</span><span>…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HOW IT WORKS ====== -->
+<section class="section section-alt" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">使用流程</div>
+      <h2>三步守护你的<span class="accent-bold">隐私文件</span></h2>
+      <p class="section-desc">零学习成本，像点外卖一样简单</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">🔑</div>
+        <h3>首次设置密码</h3>
+        <p>第一次打开设置主密码，自动生成 <strong>16 位恢复码</strong>。密码+恢复码是你唯一的解锁方式，请妥善保存。</p>
+        <div class="step-tag-row">
+          <span class="step-tag">AES-256</span>
+          <span class="step-tag">PBKDF2</span>
+          <span class="step-tag">16 位恢复码</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">📂</div>
+        <h3>加密文件</h3>
+        <p>按类型快捷选择（图片/视频/音频/文档/压缩包/任意），或直接拖拽。支持批量、混合类型同时加密。</p>
+        <div class="step-tag-row">
+          <span class="step-tag">批量上传</span>
+          <span class="step-tag">混合类型</span>
+          <span class="step-tag">拖拽支持</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">👁️</div>
+        <h3>随心查看 / 导出</h3>
+        <p>输入密码即可 <strong>内存解密</strong> 查看，图片/视频/音频原生预览，关闭即毁。需要时一键解密导出，原封不动。</p>
+        <div class="step-tag-row">
+          <span class="step-tag">内存解密</span>
+          <span class="step-tag">不留痕迹</span>
+          <span class="step-tag">一键导出</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-feature-row">
+      <div class="step-feature">
+        <div class="sf-icon">🎨</div>
+        <h4>卡片 / 列表双视图</h4>
+        <p>自由切换浏览模式，搜索、筛选、排序一应俱全。</p>
+      </div>
+      <div class="step-feature">
+        <div class="sf-icon">📋</div>
+        <h4>批量操作</h4>
+        <p>批量选择、批量删除、批量导出，批量解密查看。</p>
+      </div>
+      <div class="step-feature">
+        <div class="sf-icon">🗑️</div>
+        <h4>回收站</h4>
+        <p>删除的文件保留 30 天，随时一键还原，防止误删。</p>
+      </div>
+      <div class="step-feature">
+        <div class="sf-icon">📊</div>
+        <h4>数据看板</h4>
+        <p>统计各类型文件数量、大小占比，一目了然。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== HIGHLIGHTS ====== -->
+<section class="section" id="highlights">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">亮点特性</div>
+      <h2>为<span class="accent-bold">真实场景</span>而生</h2>
+      <p class="section-desc">这些细节，决定了它是工具还是艺术品</p>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <div class="h-badge">无上限</div>
+        <h3>文件大小无限制</h3>
+        <p>加密 1MB 的小文件，还是 10GB 的高清视频，统统支持。没有大小限制，没有门槛。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">无上限</div>
+        <h3>加密速度无限制</h3>
+        <p>采用流式加密 + 分块写入，加密多少 G 的文件都不会卡进度条，所见即所得。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">极速</div>
+        <h3>加密解密导出快</h3>
+        <p>基于 AES-NI 硬件加速指令，加密速度可达数百 MB/s，解密导出同样飞快响应。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">极速</div>
+        <h3>内存解密，即开即用</h3>
+        <p>查看加密文件时仅在内存中解密，关闭查看器后文件自动消失，不留临时文件。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">智能</div>
+        <h3>自动类型识别</h3>
+        <p>根据扩展名自动分类为图片、视频、音频、文档、压缩包，卡片标签清晰标注。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">高效</div>
+        <h3>混合批量加密</h3>
+        <p>同时上传图片、视频、音频等多种类型，自动分组管理，批量累加统计大小。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">安全</div>
+        <h3>16 位恢复码</h3>
+        <p>忘记密码？用加密时生成的 16 位恢复码即可解锁，格式灵活，横杠可有可无。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">美观</div>
+        <h3>自动生成封面</h3>
+        <p>视频自动提取首帧、图片自动生成缩略图，让每个加密条目都有视觉标识。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">便捷</div>
+        <h3>内置音乐播放器</h3>
+        <p>加密音乐也能听：随机、循环、歌词显示、进度拖动，体验原生级享受。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">灵活</div>
+        <h3>自定义封面 / 标题</h3>
+        <p>为每条加密记录自定义标题和封面图，让分类和查找更直观。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">本地</div>
+        <h3>零上传 · 零云依赖</h3>
+        <p>所有操作 100% 在本地完成，你的文件从未离开你的电脑。</p>
+      </div>
+
+      <div class="highlight-card">
+        <div class="h-badge">随心</div>
+        <h3>导出还原 · 原质原味</h3>
+        <p>需要取出文件时，一键解密导出，文件原封不动，一个字节都不会丢。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SECURITY ====== -->
+<section class="section section-security" id="security">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">安全架构</div>
+      <h2>为什么选择 <span class="accent-light">BeSafe</span>？</h2>
+      <p class="section-desc">每一层防护，都是为了让你的秘密只属于你</p>
+    </div>
+
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="sec-num">256</div>
+        <h3>AES-256 加密算法</h3>
+        <p>采用美国联邦政府认证的高级加密标准（AES-256），密钥长度 256 位，暴力破解需数亿年。</p>
+      </div>
+
+      <div class="security-card">
+        <div class="sec-num">0</div>
+        <h3>零云端传输</h3>
+        <p>所有加密、解密、查看操作完全在本地完成，绝不向任何服务器上传你的敏感文件。</p>
+      </div>
+
+      <div class="security-card">
+        <div class="sec-num">16</div>
+        <h3>16 位恢复码</h3>
+        <p>独立于密码的恢复机制，即使忘记密码也能通过 16 位恢复码找回所有加密文件。</p>
+      </div>
+
+      <div class="security-card">
+        <div class="sec-num">∞</div>
+        <h3>无限分组嵌套</h3>
+        <p>支持任意层级的分组管理，混合类型批量加密、批量查看，分类清晰。</p>
+      </div>
+    </div>
+
+    <div class="security-timeline">
+      <div class="tl-item">
+        <div class="tl-icon">🔑</div>
+        <div class="tl-content">
+          <h4>密钥派生</h4>
+          <p>密码通过 PBKDF2 派生出加密密钥，即使密码强度一般也能得到安全保障。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon">🔐</div>
+        <div class="tl-content">
+          <h4>文件加密</h4>
+          <p>加密过程基于 AES-256 块加密，原始文件加密后以 .enc 扩展名保存。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon">💾</div>
+        <div class="tl-content">
+          <h4>安全存储</h4>
+          <p>加密文件存储在本地资源目录，保持原始文件结构但无法被任何常规工具读取。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon">👁️</div>
+        <div class="tl-content">
+          <h4>内存查看</h4>
+          <p>解密过程仅在内存中完成，关闭查看器即刻销毁明文，不留任何痕迹。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">用户心声</div>
+      <h2>他们都在用<span class="accent-tag">BeSafe</span></h2>
+      <p class="section-desc">来自真实用户的反馈</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>&ldquo;终于有一个专注本地加密的小工具了！之前用网盘加密总是担心被看，现在照片、视频都放心锁在本地。&rdquo;</p>
+        <div class="t-user">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">小</div>
+          <div>
+            <strong>小明</strong>
+            <span>设计师</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>&ldquo;批量加密功能太实用了，一次选几十张照片一键搞定。卡片视图加封面，找起来特别方便。&rdquo;</p>
+        <div class="t-user">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">阿</div>
+          <div>
+            <strong>阿May</strong>
+            <span>自媒体创作者</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p>&ldquo;合同文件、私密录音、学习资料全扔里面锁起来了。恢复码机制让我不用怕忘记密码，安心。&rdquo;</p>
+        <div class="t-user">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">律</div>
+          <div>
+            <strong>林律师</strong>
+            <span>执业律师</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>你可能想知道的<span class="accent-underline">几件事</span></h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>BeSafe 会把我的文件上传到云端吗？</summary>
+        <div class="faq-body">
+          <p>绝对不会。BeSafe 是一个纯本地应用，所有加密、解密、查看操作 100% 在你的电脑上完成。你的文件永远不会离开你的设备。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>忘记密码怎么办？</summary>
+        <div class="faq-body">
+          <p>每次加密时 BeSafe 会生成一个 16 位恢复码。你可以用恢复码直接解锁文件，无需密码。建议将恢复码打印或保存到安全位置。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>加密后的文件可以恢复原始格式吗？</summary>
+        <div class="faq-body">
+          <p>可以。解密后文件完全恢复原始格式和文件名，不会有任何损坏或质量损失。图片、视频、音频均保持原始码流。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>支持哪些文件类型？</summary>
+        <div class="faq-body">
+          <p>支持 6 大类：图片（JPG/PNG/GIF/WebP/TIFF 等）、视频（MP4/MKV/AVI/MOV 等）、音频（MP3/WAV/FLAC/AAC 等）、文档（PDF/DOCX/XLSX/PPTX 等）、压缩包（ZIP/RAR/7z 等）以及任意其他文件。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>加密文件的大小会变化吗？</summary>
+        <div class="faq-body">
+          <p>加密后文件体积略大于原文件（主要是加密头部开销），但查看时完全透明。批量加密后统计大小为累计实际大小。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>可以在多台电脑间同步加密文件吗？</summary>
+        <div class="faq-body">
+          <p>可以。加密文件保留原始扩展名对应关系（.enc 格式），你可以通过 U 盘或局域网传输到另一台电脑，使用相同的密码或恢复码即可解密。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>加密文件大小有限制吗？</summary>
+        <div class="faq-body">
+          <p>完全没有。无论是 1MB 的照片还是 10GB 的高清视频，BeSafe 都支持加密。采用流式处理，内存占用恒定，不会因为文件大而卡顿。</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>加密 / 解密速度快吗？</summary>
+        <div class="faq-body">
+          <p>非常快。BeSafe 使用 AES-NI 硬件加速指令（现代 CPU 均支持），加密速度可达数百 MB/s。一个 1GB 的视频文件，加密或解密只需几秒钟。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DOWNLOAD / CTA ====== -->
+<section class="download" id="download">
+  <div class="container">
+    <div class="download-card">
+      <div class="download-left">
+        <h2>准备好守护你的<span class="accent-bold">重要文件</span>了吗？</h2>
+        <p>BeSafe 必锁 · 永久免费 · 无需注册 · 安装即用</p>
+        <div class="download-features">
+          <div>✅ AES-256 军规级加密</div>
+          <div>✅ 零云端上传，100% 本地</div>
+          <div>✅ 文件大小无限制，加密速度无限制</div>
+          <div>✅ 图片/视频/音频/文档全支持</div>
+          <div>✅ 16 位恢复码找回</div>
+          <div>✅ 内存解密，不留痕迹</div>
+        </div>
+      </div>
+      <div class="download-right">
+        <div class="os-card">
+          <div class="os-icon">🪟</div>
+          <div class="os-name">Windows</div>
+          <div class="os-ver">v2.1.8</div>
+          <a href="https://github.com/xiaoc153/BeSafe/releases" target="_blank" rel="noopener" class="btn btn-primary btn-block">⬇ 立即下载</a>
+        </div>
+        <div class="os-card disabled">
+          <div class="os-icon">🍎</div>
+          <div class="os-name">macOS</div>
+          <div class="os-ver">敬请期待</div>
+          <span class="btn btn-ghost btn-block">即将开放</span>
+        </div>
+        <div class="os-card disabled">
+          <div class="os-icon">🐧</div>
+          <div class="os-name">Linux</div>
+          <div class="os-ver">敬请期待</div>
+          <span class="btn btn-ghost btn-block">即将开放</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="6" fill="#1890ff"/>
+          <path d="M16 7a5 5 0 00-5 5v3h-1v10h12V15h-1v-3a5 5 0 00-5-5zm-3 8v-3a3 3 0 016 0v3z" fill="white"/>
+        </svg>
+        <span>BeSafe <em>必锁</em></span>
+      </div>
+      <p class="footer-tagline">安全加密，随心查看</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>产品</h4>
+      <a href="#features">核心功能</a>
+      <a href="#highlights">亮点特性</a>
+      <a href="#security">安全架构</a>
+      <a href="#download">下载</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>帮助</h4>
+      <a href="#how">使用流程</a>
+      <a href="#faq">常见问题</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>联系</h4>
+      <a href="mailto:caotangyi@foxmail.com">合作洽谈</a>
+      <a href="mailto:caotangyi@foxmail.com">caotangyi@foxmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© 2026 BeSafe 必锁 · 保留所有权利</span>
+      <span>版本 v2.1.8</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
